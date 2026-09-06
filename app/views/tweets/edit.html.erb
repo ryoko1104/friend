@@ -1,0 +1,24 @@
+<%= form_for @tweet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :size => 140 %> 
+
+  <%= f.label :age %>
+  <%= f.text_field :age, :size => 140 %>
+
+  <%= f.label :community %>
+  <%= f.text_field :community, :size => 140 %>
+
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday %>
+
+  <%= f.label :photo %>
+  <%= f.text_field :photo, :size => 140 %>
+
+  <%= f.label :personality %>
+  <%= f.text_field :personality, :size => 140 %>
+
+  <%= f.label :birthplace %>
+  <%= f.text_field :birthplace, :size => 140 %>
+
+  <%= f.submit "編集" %>
+<% end %>

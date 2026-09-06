@@ -1,0 +1,48 @@
+<h1>友達登録サイト</h1>
+
+<%= link_to "ログイン", tweets_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+
+<h3>一覧ページ</h3>
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_tweet_path %>
+<div class="tweets-container">
+
+  <% @tweets.each do |t| %>
+
+   <div class="tweet">
+
+      <% if t.image.attached? %>
+          <%= image_tag t.image, size: '250x200'%>
+      <% end %>
+
+      <%= t.name %>
+      <%= t.age %>
+      <%= t.community %>
+      <%= t.birthday %>
+      <%= t.photo %>
+      <%= t.personality %>
+      <%= t.birthplace %>
+      <%= link_to "詳細へ", tweet_path(t.id) %> 
+    
+      <%= link_to "編集する", edit_tweet_path(t.id) %>
+
+      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+   </div>
+  
+   <% if t.user.image.attached? %>
+     <%= image_tag  t.user.image, size: '250x200'%>
+   <% end %>
+
+  <% end %>
+</div>

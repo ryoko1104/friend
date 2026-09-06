@@ -1,0 +1,51 @@
+<h1>友達登録サイト</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @tweet do |f| %>
+
+
+  <div class="field">
+    <%= f.label :名前 %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :年齢  %>
+    <%= f.number_field :age, :size => 10 %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :コミュニティー %>
+    <%= f.text_field :community, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :誕生日 %>
+    <%= f.date_field :birthday %>  
+  </div>
+
+
+  <div class="field">
+    <%= f.label :写真 %>
+    <%= f.file_field :image %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :性格・特徴  %>
+    <%= f.text_area :personality, :size => "30x2" %>
+  </div>
+
+ 
+  <div class="field">
+    <%= f.label :出身地 %>
+    <%= f.text_field :birthplace, :size => 30 %>
+  </div>
+
+  
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", tweets_path %>
