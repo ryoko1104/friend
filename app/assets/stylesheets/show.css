@@ -1,0 +1,178 @@
+/* 詳細ページ全体の基本設定 */
+.show-tweet-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.show-tweet-page h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a453e;
+}
+
+/* 1. 投稿詳細カード */
+.show-tweet-page .tweet {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  border: 1px solid #eae5dc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.show-tweet-page .tweet p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.95rem;
+  color: #4a453e;
+  border-bottom: 1px dashed #f0ece3;
+  padding-bottom: 8px;
+}
+
+/* 項目バッジ（年齢・コミュニティなど） */
+.show-tweet-page .label-badge {
+  background-color: #f4efe6;
+  color: #6e665d;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #eae5dc;
+  min-width: 90px;
+  text-align: center;
+}
+
+/* 編集ボタン */
+.show-tweet-page .edit-btn-box {
+  text-align: right;
+  margin: 10px 0 25px;
+}
+
+.show-tweet-page .btn-edit {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #8c857b;
+  color: #4a453e;
+  font-size: 0.85rem;
+  background-color: #ffffff;
+}
+
+/* 2. コメントエリア */
+.show-tweet-page .comment-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 25px;
+}
+
+.show-tweet-page .comment-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 15px 0;
+  color: #4a453e;
+}
+
+/* コメントカード */
+.show-tweet-page .comment-box {
+  background-color: #fcfbf9;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.show-tweet-page .comment-content {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  color: #4a453e;
+}
+
+.show-tweet-page .comment-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0ece3;
+  padding-top: 6px;
+}
+
+.show-tweet-page .comment-date {
+  font-size: 0.75rem;
+  color: #9e968b;
+}
+
+.show-tweet-page .comment-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.show-tweet-page .comment-btns form {
+  display: inline;
+  margin: 0;
+}
+
+.show-tweet-page .btn-sm-edit,
+.show-tweet-page .btn-sm-delete {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.show-tweet-page .btn-sm-edit {
+  border: 1px solid #8c857b;
+  color: #4a453e;
+}
+
+.show-tweet-page .btn-sm-delete {
+  border: 1px solid #e07a5f;
+  color: #e07a5f;
+}
+
+/* フォーム */
+.show-tweet-page .comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.show-tweet-page .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  background-color: #fcfbf9;
+  box-sizing: border-box;
+}
+
+.show-tweet-page .btn-submit {
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* 戻るボタン */
+.show-tweet-page .back-btn-box {
+  text-align: center;
+}
+
+.show-tweet-page .btn-back {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #eae5dc;
+  color: #4a453e;
+}

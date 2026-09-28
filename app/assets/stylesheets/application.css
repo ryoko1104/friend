@@ -13,3 +13,115 @@
  *= require_tree .
  *= require_self
  */
+
+/* --- 全体共通ヘッダーのデザイン --- */
+.main-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eae5dc;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* 左にタイトル、右にメニュー */
+  align-items: center;
+}
+
+/* タイトルエリア（画像と文字を横並びにする） */
+.header-inner h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #4a453e;
+  display: flex;          /* ★追加: ロゴと文字を横並び */
+  align-items: center;    /* ★追加: 上下の中央に揃える */
+  gap: 10px;              /* ★追加: ロゴと文字のすき間 */
+}
+
+/* ★追加: ロゴ画像のサイズ設定（小さめに調整） */
+.header-logo {
+  width: 45px;            /* 画像の幅 */
+  height: 45px;           /* 画像の高さ */
+  object-fit: contain;    /* 縦横比を崩さず収める */
+}
+
+/* メニューリスト */
+.header-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 通常リンク */
+.header-link {
+  color: #4a453e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.header-link:hover {
+  color: #8c857b;
+}
+
+/* ログアウトボタン */
+.header-link-btn {
+  background: none;
+  border: none;
+  color: #4a453e;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-link-btn:hover {
+  color: #8c857b;
+}
+
+/* 「新規投稿へ」ボタン（ここだけベージュで強調） */
+.header-btn-highlight {
+  background-color: #d8c3a5;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.header-btn-highlight:hover {
+  background-color: #c4ae90;
+}
+
+/* フラッシュメッセージ（通知）のスタイル */
+.flash-notice,
+.flash-alert {
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 通常の通知（メール送信完了など） */
+.flash-notice {
+  background-color: #f0f7f4;
+  color: #52796f;
+  border: 1px solid #cad2c5;
+}
+
+/* 警告・エラー通知 */
+.flash-alert {
+  background-color: #fdf0ed;
+  color: #e07a5f;
+  border: 1px solid #f4acb7;
+}

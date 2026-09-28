@@ -1,0 +1,66 @@
+/* 新規投稿ページ限定のスタイル */
+
+/* フォーム全体 */
+.new-tweet-page form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 入力項目 */
+.new-tweet-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.new-tweet-page .field label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #4a453e;
+}
+
+.new-tweet-page .field input[type="text"],
+.new-tweet-page .field input[type="number"],
+.new-tweet-page .field input[type="date"],
+.new-tweet-page .field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fcfbf9;
+  box-sizing: border-box;
+}
+
+/* 投稿ボタン */
+.new-tweet-page form input[type="submit"] {
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 一覧に戻るボタン */
+.new-tweet-page a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #4a453e;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #eae5dc;
+  width: 140px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,125 @@
+/* プロフィール編集ページ全体 */
+.profile-edit-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-edit-page h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a453e;
+}
+
+/* 白枠カードフォーム */
+.profile-edit-page form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-edit-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-edit-page label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4a453e;
+}
+
+.profile-edit-page .password-note {
+  font-size: 0.75rem;
+  color: #8c857b;
+  font-weight: normal;
+}
+
+/* 入力フォーム共通 */
+.profile-edit-page input[type="text"],
+.profile-edit-page input[type="email"],
+.profile-edit-page input[type="password"],
+.profile-edit-page textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  background-color: #fcfbf9;
+  font-size: 0.95rem;
+  color: #4a453e;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.profile-edit-page textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.profile-edit-page input[type="text"]:focus,
+.profile-edit-page input[type="email"]:focus,
+.profile-edit-page input[type="password"]:focus,
+.profile-edit-page textarea:focus {
+  border-color: #d8c3a5;
+  background-color: #ffffff;
+}
+
+/* 画像選択ボタンのスタイル調整 */
+.profile-edit-page .file-input {
+  font-size: 0.85rem;
+  color: #4a453e;
+}
+
+/* 確認待ちアドレスの警告 */
+.profile-edit-page .unconfirmed-notice {
+  font-size: 0.8rem;
+  color: #e07a5f;
+  background-color: #fdf0ed;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* 更新ボタン */
+.profile-edit-page form input[type="submit"] {
+  width: 100%;
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 11px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.profile-edit-page form input[type="submit"]:hover {
+  background-color: #c4ae90;
+}
+
+/* 戻るリンク */
+.profile-edit-page .devise-links {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-edit-page .link-item {
+  color: #4a453e;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.profile-edit-page .link-item:hover {
+  color: #8c857b;
+  text-decoration: underline;
+}

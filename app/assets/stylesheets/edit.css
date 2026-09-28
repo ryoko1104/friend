@@ -1,0 +1,110 @@
+/* 
+  編集ページ限定スタイル (.edit-tweet-page 内のみに適用)
+*/
+
+/* タイトル */
+.edit-tweet-page h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a453e;
+}
+
+/* フォーム本体（カード風白枠） */
+.edit-tweet-page form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 各入力項目 */
+.edit-tweet-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-tweet-page .field label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #4a453e;
+}
+
+/* 入力フォーム各種 */
+.edit-tweet-page .field input[type="text"],
+.edit-tweet-page .field input[type="number"],
+.edit-tweet-page .field input[type="date"],
+.edit-tweet-page .field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fcfbf9;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.edit-tweet-page .field input[type="text"]:focus,
+.edit-tweet-page .field input[type="number"]:focus,
+.edit-tweet-page .field input[type="date"]:focus,
+.edit-tweet-page .field textarea:focus {
+  border-color: #d8c3a5;
+  background-color: #ffffff;
+}
+
+/* 写真選択ボタン */
+.edit-tweet-page .field input[type="file"] {
+  font-size: 0.9rem;
+  padding: 5px 0;
+}
+
+/* 更新するボタン */
+.edit-tweet-page form input[type="submit"] {
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.edit-tweet-page form input[type="submit"]:hover {
+  background-color: #c4ae90;
+}
+
+/* 下部リンクエリア（横並びで配置） */
+.edit-tweet-page .link-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 戻るボタン風リンク */
+.edit-tweet-page .link-container a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #4a453e;
+  background-color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #eae5dc;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.edit-tweet-page .link-container a:hover {
+  background-color: #8c857b;
+  color: #ffffff;
+}

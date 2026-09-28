@@ -18,20 +18,38 @@
   </head>
 
   <body>
-    <header>
-      <h1>友達登録サイト</h1>
-      <div class="header-list">
-      <ul>
-        <% if user_signed_in? %>
-        <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      </ul>
+    <header class="main-header">
+      <div class="header-inner">
+        <h1>
+          <%= image_tag "logo.png", class: "header-logo", alt: "ロゴ" %>
+          <span>友達登録サイト</span>
+        </h1>
+        
+        <div class="header-list">
+          <ul>
+            <% if user_signed_in? %>
+              <!-- ログイン状態 -->
+              <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-link-btn" %></li>
+              <li><%= link_to "マイページへ", user_path(current_user), class: "header-link" %></li>
+              <li><%= link_to "新規投稿へ", new_tweet_path, class: "header-btn-highlight" %></li>
+            <% else %>
+              <!-- ログアウト状態 -->
+              <li><%= link_to "新規登録", new_user_registration_path, class: "header-link" %></li>
+              <li><%= link_to "ログイン", new_user_session_path, class: "header-link" %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </header>
+
     <main>
+      <!-- フラッシュメッセージ（メール送信完了などの通知表示エリア） -->
+      <% if notice %>
+        <div class="flash-notice"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="flash-alert"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </main>
   </body>

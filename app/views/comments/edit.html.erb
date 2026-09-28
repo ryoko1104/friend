@@ -1,0 +1,19 @@
+<div class="edit-comment-page">
+
+  <h2>コメント編集</h2>
+
+  <%= form_with model: [@tweet, @comment], local: true do |f| %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "コメントを入力..." %>
+    </div>
+
+    <div class="submit-box">
+      <%= f.submit "更新する" %>
+    </div>
+  <% end %>
+
+  <div class="back-btn-box">
+    <%= link_to "戻る", tweet_path(@tweet), class: "btn-back" %>
+  </div>
+
+</div>

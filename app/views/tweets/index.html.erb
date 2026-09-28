@@ -1,48 +1,44 @@
-<h1>友達登録サイト</h1>
 
-<%= link_to "ログイン", tweets_path %>
-<%= link_to "新規登録", new_user_registration_path %>
 
-<h3>一覧ページ</h3>
+<!-- 2. タイトルと新規投稿ボタン -->
+<div class="title-container">
+  <h3>＜ 一覧ページ ＞</h3>
+  
+</div>
 
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
+<!-- 3. 中央の検索バー -->
+<div class="search-container">
+  <%= form_tag({controller:"tweets", action:"index"}, method: :get) do %>
+    <%= text_field_tag :search, params[:search], placeholder: "キーワード検索..." %>
+    <%= submit_tag '検索' %>
+  <% end %>
+</div>
 
-<h3>投稿を検索</h3>
- <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-   <%= text_field_tag :search %>
-   <%= submit_tag '検索する'  %>
-<% end %>
-
-<%= link_to "新規投稿へ", new_tweet_path %>
+<!-- 4. 投稿一覧（手書き図通りのレイアウト） -->
 <div class="tweets-container">
-
   <% @tweets.each do |t| %>
+    <div class="tweet">
 
-   <div class="tweet">
-
+      <!-- 右側の写真 -->
       <% if t.image.attached? %>
-          <%= image_tag t.image, size: '250x200'%>
+        <%= image_tag t.image %>
       <% end %>
 
-      <%= t.name %>
-      <%= t.age %>
-      <%= t.community %>
-      <%= t.birthday %>
-      <%= t.photo %>
-      <%= t.personality %>
-      <%= t.birthplace %>
-      <%= link_to "詳細へ", tweet_path(t.id) %> 
-    
-      <%= link_to "編集する", edit_tweet_path(t.id) %>
+      <!-- 左側のテキスト＆操作エリア -->
+      <div class="tweet-content">
+        <!-- 名前 -->
+        <p class="tweet-name">名前：<%= t.name %></p>
 
-      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
-   </div>
-  
-   <% if t.user.image.attached? %>
-     <%= image_tag  t.user.image, size: '250x200'%>
-   <% end %>
+        <!-- ▷ 詳しくみる -->
+        <%= link_to "▷ 詳しくみる", tweet_path(t.id), class: "detail-link" %>
 
+        <!-- 丸囲みの 編集 / 削除 ボタン -->
+        <div class="action-buttons">
+          <%= link_to "編集", edit_tweet_path(t.id), class: "btn-edit" %>
+          <%= button_to "削除", tweet_path(t.id), method: :delete, class: "btn-delete" %>
+        </div>
+      </div>
+
+    </div>
   <% end %>
 </div>

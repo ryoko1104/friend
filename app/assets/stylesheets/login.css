@@ -1,0 +1,96 @@
+/* ログインページ全体のレイアウト */
+.login-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-page h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a453e;
+}
+
+/* 白枠カードフォーム */
+.login-page form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-page label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4a453e;
+}
+
+.login-page input[type="email"],
+.login-page input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  background-color: #fcfbf9;
+  font-size: 0.95rem;
+  color: #4a453e;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-page input[type="email"]:focus,
+.login-page input[type="password"]:focus {
+  border-color: #d8c3a5;
+  background-color: #ffffff;
+}
+
+/* ログインボタン */
+.login-page form input[type="submit"] {
+  width: 100%;
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 11px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.login-page form input[type="submit"]:hover {
+  background-color: #c4ae90;
+}
+
+/* 画面下部のリンクエリア */
+.login-page .devise-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-page .link-item {
+  color: #4a453e;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-page .link-item:hover {
+  color: #8c857b;
+  text-decoration: underline;
+}

@@ -1,0 +1,9 @@
+.user-tweets {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.user-tweet {
+  width: 250px;
+}

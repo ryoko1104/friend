@@ -1,0 +1,211 @@
+/* 
+  index.css - 参考サイト風：2列レイアウト（PC時2個並び / スマホ時1個並び）
+*/
+
+/* --- 全体の基本設定 --- */
+body {
+  background-color: #f7f5f0; /* 背景：薄いベージュ */
+  color: #4a453e;            /* 文字色：ダークブラウン */
+  font-family: sans-serif;
+  max-width: 1100px;         /* 2列並べるために幅を広く設定 */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* リンクの下線を消す */
+a {
+  text-decoration: none;
+  color: #4a453e;
+}
+
+/* --- 1. 上のボタンエリア（ログイン・新規登録・マイページ） --- */
+.top-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-nav a,
+.title-container a {
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #eae5dc;
+  font-size: 0.9rem;
+}
+
+.top-nav a:hover,
+.title-container a:hover {
+  background-color: #d8c3a5;
+  color: #ffffff;
+}
+
+/* --- 2. タイトル ＆ 新規投稿ボタン --- */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-container h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* --- 3. 中央の検索バー --- */
+.search-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.search-container form {
+  display: inline-flex;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 30px;
+  border: 1px solid #eae5dc;
+  width: 100%;
+  max-width: 450px;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  background: transparent;
+}
+
+.search-container input[type="submit"] {
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-container input[type="submit"]:hover {
+  background-color: #c4ae90;
+}
+
+/* --- 4. 投稿一覧エリア（グリッド配置） --- */
+.tweets-container {
+  display: grid;
+  /* 画面に合わせて「最小380pxのカード」を均等配置（画面が広ければ2列、狭ければ1列） */
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+/* --- 投稿カード本体 --- */
+.tweet {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #eae5dc;
+
+  display: flex;
+  flex-direction: row-reverse; /* 右に写真、左にテキスト */
+  justify-content: start;      /* ★重要：余白を均等に配分せず、端から詰めて配置する */
+  align-items: center;
+  gap: 16px;                   /* ★写真と名前エリアの間のスキマ（自由に変更OK） */
+}
+
+/* 左側の情報エリア */
+.tweet-content {
+  flex: 1;                     /* 残りの幅を自然に埋める */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 右側の写真 */
+.tweet img {
+  width: 220px;                /* ★写真をしっかり見やすい大きさに固定 */
+  height: 150px;               /* ★縦横比を綺麗に保つ高さ */
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;              /* ★文字が増えても写真が小さく潰れないように固定 */
+}
+
+/* 名前 */
+.tweet-name {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #4a453e;
+  margin: 0;
+}
+
+/* ▷ 詳しくみる */
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #4a453e;
+}
+
+.detail-link:hover {
+  color: #c4ae90;
+}
+
+/* 丸囲みの編集・削除ボタン */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-buttons a,
+.action-buttons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-edit {
+  border: 1px solid #8c857b;
+  color: #4a453e;
+  background-color: transparent;
+}
+
+.btn-edit:hover {
+  background-color: #8c857b;
+  color: #ffffff;
+}
+
+.btn-delete {
+  border: 1px solid #e07a5f;
+  color: #e07a5f;
+  background-color: transparent;
+}
+
+.btn-delete:hover {
+  background-color: #e07a5f;
+  color: #ffffff;
+}
+
+.action-buttons form {
+  display: inline;
+  margin: 0;
+}
+
+/* スマホ用の設定（画面幅が狭い場合） */
+@media (max-width: 480px) {
+  .tweets-container {
+    grid-template-columns: 1fr; /* スマホでは完全に1列 */
+  }
+  
+  .tweet {
+    flex-direction: column-reverse; /* 写真上・テキスト下 */
+  }
+
+  .tweet img {
+    width: 100%;
+    height: 160px;
+  }
+}

@@ -1,24 +1,88 @@
-<%= form_for @tweet do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :size => 140 %> 
+<div class="edit-tweet-page">
+  <h3>編集ページ</h3>
 
-  <%= f.label :age %>
-  <%= f.text_field :age, :size => 140 %>
+  <%= form_for @tweet do |f| %>
+      
+  <div class="field">
 
-  <%= f.label :community %>
-  <%= f.text_field :community, :size => 140 %>
+  <%= f.label :name, "名前" %>
 
-  <%= f.label :birthday %>
+  <%= f.text_field :name, size: 30 %>
+
+  </div>
+
+
+
+  <div class="field">
+
+  <%= f.label :age, "年齢" %>
+
+  <%= f.number_field :age, size: 10 %>
+
+  </div>
+
+
+
+  <div class="field">
+
+  <%= f.label :community, "コミュニティー" %>
+
+  <%= f.text_field :community, size: 30 %>
+
+  </div>
+
+
+
+  <div class="field">
+
+  <%= f.label :birthday, "誕生日" %>
+
   <%= f.date_field :birthday %>
 
-  <%= f.label :photo %>
-  <%= f.text_field :photo, :size => 140 %>
+  </div>
 
-  <%= f.label :personality %>
-  <%= f.text_field :personality, :size => 140 %>
 
-  <%= f.label :birthplace %>
-  <%= f.text_field :birthplace, :size => 140 %>
 
-  <%= f.submit "編集" %>
-<% end %>
+  <div class="field">
+
+  <%= f.label :image, "写真" %>
+
+  <%= f.file_field :image %>
+
+  </div>
+
+
+
+  <div class="field">
+
+  <%= f.label :personality, "性格・特徴" %>
+
+  <%= f.text_area :personality, size: "30x2" %>
+
+  </div>
+
+
+
+  <div class="field">
+
+  <%= f.label :birthplace, "出身地" %>
+
+  <%= f.text_field :birthplace, size: 30 %>
+
+  </div>
+
+
+
+  <%= f.submit "更新する" %>
+
+
+
+  <% end %>
+
+
+
+  <%= link_to "詳細に戻る", tweet_path(@tweet.id) %>
+
+  <%= link_to "一覧に戻る", tweets_path %> 
+</div>
+

@@ -14,6 +14,35 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+  @comment = Comment.find(params[:id])
+  @tweet = Tweet.find(params[:tweet_id])
+  end
+
+def update
+  @tweet = Tweet.find(params[:tweet_id])
+  @comment = Comment.find(params[:id])
+
+  if @comment.user_id == current_user.id
+    @comment.update(comment_params)
+    redirect_to tweet_path(@comment.tweet_id)
+  else
+    redirect_to tweet_path(@comment.tweet_id)
+  end
+end
+
+def destroy
+  @tweet = Tweet.find(params[:tweet_id])
+  @comment = Comment.find(params[:id])
+  tweet_id = @comment.tweet_id
+
+  if @comment.user_id == current_user.id
+    @comment.destroy
+  end
+
+  redirect_to tweet_path(tweet_id)
+end
+
   private
 
     def comment_params

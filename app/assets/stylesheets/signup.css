@@ -1,0 +1,103 @@
+/* 新規登録ページ全体 */
+.signup-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.signup-page h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a453e;
+}
+
+/* 白枠カードフォーム */
+.signup-page form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  border: 1px solid #eae5dc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.signup-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signup-page label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4a453e;
+}
+
+.signup-page .password-note {
+  font-size: 0.75rem;
+  color: #8c857b;
+  font-weight: normal;
+}
+
+.signup-page input[type="text"],
+.signup-page input[type="email"],
+.signup-page input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #eae5dc;
+  border-radius: 8px;
+  background-color: #fcfbf9;
+  font-size: 0.95rem;
+  color: #4a453e;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.signup-page input[type="text"]:focus,
+.signup-page input[type="email"]:focus,
+.signup-page input[type="password"]:focus {
+  border-color: #d8c3a5;
+  background-color: #ffffff;
+}
+
+/* ボタン */
+.signup-page form input[type="submit"] {
+  width: 100%;
+  background-color: #d8c3a5;
+  color: #ffffff;
+  border: none;
+  padding: 11px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.signup-page form input[type="submit"]:hover {
+  background-color: #c4ae90;
+}
+
+/* リンク */
+.signup-page .devise-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-page .link-item {
+  color: #4a453e;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.signup-page .link-item:hover {
+  color: #8c857b;
+  text-decoration: underline;
+}

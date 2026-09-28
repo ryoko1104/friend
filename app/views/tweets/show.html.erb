@@ -1,36 +1,52 @@
-<h1>GeekTwitter</h1>
-<h3>Tweet詳細</h3>
-<div class="tweet">
-  <p><%= @tweet.age %></p>
-  <p><%= @tweet.community %></p>
-  <p><%= @tweet.birthday %></p>
-  <p><%= @tweet.personality %></p>
-  <p><%= @tweet.birthplace %></p>
+<div class="show-tweet-page">
 
-  <p><%= @tweet.created_at %></p>
-</div>
+  <h3>詳細ページ</h3>
 
-<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+  <div class="tweet">
+    <p><span class="label-badge">年齢</span><%= @tweet.age %></p>
+    <p><span class="label-badge">コミュニティ</span><%= @tweet.community %></p>
+    <p><span class="label-badge">誕生日</span><%= @tweet.birthday %></p>
+    <p><span class="label-badge">性格</span><%= @tweet.personality %></p>
+    <p><span class="label-badge">出身地</span><%= @tweet.birthplace %></p>
+  </div>
 
-<div class="comment-wrapper">
-  <p>コメント一覧</p>
-  <% @comments.each do |c| %>
-    <div>
-      <%= c.user.email unless c.user.blank? %>
-      <br>
-      <%= c.content %>
-    </div>
-      <br>
-  <% end %>
+  <div class="edit-btn-box">
+    <%= link_to "編集する", edit_tweet_path(@tweet.id), class: "btn-edit" %>
+  </div>
 
-  <% if user_signed_in? %>
-    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
+  <div class="comment-wrapper">
+    <p class="comment-title">コメント一覧</p>
+    <% @comments.each do |comment| %>
+      <div class="comment-box">
+        <p class="comment-content"><%= comment.content %></p>
+        <div class="comment-meta">
+          <span class="comment-date"><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+          <% if comment.user == current_user %>
+            <div class="comment-btns">
+              <%= link_to "編集", edit_tweet_comment_path(@tweet, comment), class: "btn-sm-edit" %>
+              <%= button_to "削除",
+                  tweet_comment_path(@tweet, comment),
+                  method: :delete,
+                  data: { turbo_confirm: "本当に削除しますか？" },
+                  class: "btn-sm-delete" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= form_with(model: [@tweet, @comment], local: true, class: "comment-form") do |f| %>
+        <%= f.text_area :content, placeholder: "コメントを入力..." %>
+        <%= button_tag type: "submit", class: "btn-submit" do %>
+          <i class="far fa-comments"></i> コメントする
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<%= link_to "Tweet一覧に戻る", tweets_path %>
+  <div class="back-btn-box">
+    <%= link_to "一覧に戻る", tweets_path, class: "btn-back" %>
+  </div>
+
+</div>
